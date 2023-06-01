@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="form">
+            <h1>Dojo Survey</h1>
+            <form action="{{ url_for('process') }}" method="POST">
+                <label for="name" class="label">Your Name:</label>
+                <input type="text" name="name" id="name" placeholder="">
+                <label for="location" class="label">Dojo Location:</label>
+                <select name="location" id="location">
+                    <option value = "Online">Online</option>
+                    <option value="Mountain View">Mountain View</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                </select>
+                <label for="language" class="label">Favorite Language:</label>
+                <select name="language" id="language">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                    <option value = "CSS">CSS</option>
+                </select>
+                <label for="comment" class="label">Comment (optional):</label>
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="☺"></textarea>
+                <label class="label">Subsribe to our newsletter?:</label>
+                <label for="yes">Yes</label>
+                <input type="radio" name="news" class="news" id="yes" value="yes">
+                <label for="no">No</label>
+                <input type="radio" name="news" class="news" id="no" value="no">
+                <p>Select all your favorite colors (optional):</p>
+                <div class="checkbox">
+                    <ul>
+                        <li>
+                            <label for="red">Red</label>
+                            <input type="checkbox" name="color" class="colors" id="red" value="red">
+                        </li>
+                        <li>
+                            <label for="blue">Blue</label>
+                            <input type="checkbox" name="color" class="colors" id="blue" value="blue">
+                        </li>
+                        <li>
+                            <label for="green">Green</label>
+                            <input type="checkbox" name="color" class="colors" id="green" value="green">
+                        </li>
+                    </ul>
+                </div>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
